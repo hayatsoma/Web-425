@@ -1,11 +1,28 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- app.component.html -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" routerLink="/">Home</a></li>
+      <li><a href="#" routerLink="/character">Character</a></li>
+      <li><a href="#" routerLink="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <nav>
+    <ul>
+      <li><a href="#" routerLink="/">Home</a></li>
+      <li><a href="#" routerLink="/character">Character</a></li>
+      <li><a href="#" routerLink="/about">About</a></li>
+    </ul>
+  </nav>
+</footer>
+
 
 <style>
   :host {

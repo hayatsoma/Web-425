@@ -1,0 +1,15 @@
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between images */
+}
+
+.images img {
+  width: 100px; /* Adjust as necessary */
+  height: auto; /* Maintain aspect ratio */
+}
