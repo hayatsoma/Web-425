@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   template: `
     <div class="container">
       <!-- Header with Navigation -->
       <header>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Characters</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a routerLink="/signin">Sign In</a></li>
+            <li><a routerLink="/players">Players</a></li>
+            <li><a routerLink="/create-character">Create Character</a></li>
+            <li><a routerLink="/create-guild">Create Guild</a></li>
+            <li><a routerLink="/character-faction">Character Faction</a></li>
           </ul>
         </nav>
       </header>
@@ -28,10 +29,11 @@ import { RouterOutlet } from '@angular/router';
       <footer>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Characters</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a routerLink="/signin">Sign In</a></li>
+            <li><a routerLink="/players">Players</a></li>
+            <li><a routerLink="/create-character">Create Character</a></li>
+            <li><a routerLink="/create-guild">Create Guild</a></li>
+            <li><a routerLink="/character-faction">Character Faction</a></li>
           </ul>
         </nav>
       </footer>
