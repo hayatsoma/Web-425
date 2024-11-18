@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+export class CreateCharacterComponent {
+  newCharacter = {
+    name: '',
+    gender: '',
+    class: '', // <-- Change from 'characterClass' to 'class'
+  };
 
-@Component({
-  selector: 'app-create-character',
-  standalone: true,
-  imports: [],
-  template: `
-    <h2>Create Character</h2>
-    <p>Here you can create a new character.</p>
-  `,
-  styles: [`
-    h2 {
-      color: green;
-    }
-  `]
-})
-export class CreateCharacterComponent {}
+  addCharacter() {
+    console.log(this.newCharacter);
+  }
+
+  resetForm(form: any) {
+    form.reset();
+  }
+}
+

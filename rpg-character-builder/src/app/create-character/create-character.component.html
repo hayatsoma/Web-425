@@ -1,0 +1,27 @@
+<form #characterForm="ngForm" (ngSubmit)="addCharacter()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="newCharacter.name" name="name" required>
+  </div>
+
+  <div>
+    <label for="gender">Gender</label>
+    <select id="gender" [(ngModel)]="newCharacter.gender" name="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="class">Class</label>
+    <select id="class" [(ngModel)]="newCharacter.class" name="class" required>
+      <option value="Warrior">Warrior</option>
+      <option value="Mage">Mage</option>
+      <option value="Rogue">Rogue</option>
+    </select>
+  </div>
+
+  <button type="submit">Create Character</button>
+  <button type="button" (click)="resetForm(characterForm)">Reset</button>
+</form>
