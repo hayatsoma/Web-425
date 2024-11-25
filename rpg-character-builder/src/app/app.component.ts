@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { AuthService} from './auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,6 +23,17 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
       <!-- Main Content Area -->
       <main>
+        <div class="sign-in-container">
+          <!-- Conditional Rendering for Sign-In/Sign-Out -->
+          <div *ngIf="email; else showSignIn">
+            <p>Welcome, {{ email }}!</p>
+            <button (click)="signout()">Sign Out</button>
+          </div>
+          <ng-template #showSignIn>
+            <a routerLink="/signin" class="sign-in-link">Sign In</a>
+          </ng-template>
+        </div>
+
         <router-outlet></router-outlet>
       </main>
 
@@ -39,17 +51,17 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       </footer>
     </div>
   `,
-  styles: [`
+  styles: [
     /* General Container */
-    .container {
+    `.container {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       font-family: Arial, sans-serif; /* Default font */
-    }
+    }`,
 
     /* Header Styling */
-    header {
+    `header {
       background-color: #4a90e2;
       padding: 10px 0;
       font-family: 'Courier New', Courier, monospace; /* Second font style */
@@ -66,20 +78,20 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       text-decoration: none;
       color: white;
       font-weight: bold;
-    }
+    }`,
 
     /* Main Content Area Styling */
-    main {
+    `main {
       flex: 1;
       padding: 20px;
       background-color: #f4f4f9;
       color: #333;
       font-family: Georgia, serif; /* Third font style */
-    }
+    }`,
 
     /* Footer Styling */
-    footer {
-      background-color: #333;
+    `footer {
+      background-color: #4a90e2;
       padding: 10px 0;
       color: white;
       font-family: 'Courier New', Courier, monospace;
@@ -96,9 +108,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       text-decoration: none;
       color: white;
       font-weight: bold;
-    }
-  `]
+    }`
+  ]
 })
 export class AppComponent {
   title = 'rpg-character-builder';
+  email: string | null = null; // This will be populated with user email if logged in
+
+  // Simulated sign-out method
+  signout() {
+    this.email = null;
+  }
 }
