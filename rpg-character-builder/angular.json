@@ -23,8 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public/assets"
-
+                "input": "public"
               }
             ],
             "styles": [
@@ -88,13 +87,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "a78ebdb3-99f0-45cd-8d7d-17473fe0164d"
+    "analytics": "7895a9e9-6b93-4186-845e-a1f94a8e7c42"
   }
 }

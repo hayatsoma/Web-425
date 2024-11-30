@@ -1,27 +1,34 @@
-<form #characterForm="ngForm" (ngSubmit)="addCharacter()">
-  <div>
+<div>
+  <h2>Create Character</h2>
+  <form #characterForm="ngForm" (ngSubmit)="addCharacter()">
     <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]="newCharacter.name" name="name" required>
-  </div>
+    <input id="name" name="name" type="text" [(ngModel)]="name" required />
 
-  <div>
     <label for="gender">Gender</label>
-    <select id="gender" [(ngModel)]="newCharacter.gender" name="gender" required>
+    <select id="gender" name="gender" [(ngModel)]="gender" required>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select>
-  </div>
 
-  <div>
     <label for="class">Class</label>
-    <select id="class" [(ngModel)]="newCharacter.class" name="class" required>
+    <select id="class" name="class" [(ngModel)]="charClass" required>
       <option value="Warrior">Warrior</option>
       <option value="Mage">Mage</option>
       <option value="Rogue">Rogue</option>
     </select>
-  </div>
 
-  <button type="submit">Create Character</button>
-  <button type="button" (click)="resetForm(characterForm)">Reset</button>
-</form>
+    <button type="submit" [disabled]="!characterForm.valid">Add Character</button>
+    <button type="button" (click)="resetForm(characterForm)">Reset</button>
+  </form>
+
+  <h3>Created Characters</h3>
+  <ul>
+    <li *ngFor="let char of characters">
+      <p>Name: {{ char.name }}</p>
+      <p>Gender: {{ char.gender }}</p>
+      <p>Class: {{ char.class }}</p>
+      <p>ID: {{ char.id }}</p>
+    </li>
+  </ul>
+</div>

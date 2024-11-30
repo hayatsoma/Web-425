@@ -1,22 +1,23 @@
-.create-character-container {
-  max-width: 600px;
-  margin: 0 auto;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  width: 300px;
 }
 
-.character-list table {
-  width: 100%;
-  border-collapse: collapse;
+form label {
+  margin-top: 0.5rem;
 }
 
-.character-list th,
-.character-list td {
-  border: 1px solid #ccc;
+form input, form select {
   padding: 0.5rem;
-  text-align: left;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
 }

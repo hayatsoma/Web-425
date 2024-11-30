@@ -1,0 +1,36 @@
+.signin-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.alert-danger {
+  color: red;
+  background-color: #f8d7da;
+  padding: 0.5rem;
+  border-radius: 4px;
+}

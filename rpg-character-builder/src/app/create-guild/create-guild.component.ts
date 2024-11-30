@@ -4,14 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-create-guild',
   standalone: true,
   imports: [],
-  template: `
-    <h2>Create Guild</h2>
-    <p>Establish a new guild and recruit members!</p>
-  `,
-  styles: [`
-    h2 {
-      color: purple;
-    }
-  `]
+  templateUrl: './create-guild.component.html',
+  styleUrl: './create-guild.component.css'
 })
-export class CreateGuildComponent {}
+export class CreateGuildComponent {
+
+}

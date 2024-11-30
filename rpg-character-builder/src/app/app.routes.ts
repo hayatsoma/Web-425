@@ -1,42 +1,43 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component'; // Import HomeComponent
 import { PlayersComponent } from './players/players.component';
 import { SigninComponent } from './signin/signin.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { CreateGuildComponent } from './create-guild/create-guild.component';
 import { CharacterFactionComponent } from './character-faction/character-faction.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent  // Default route
+    path: '', // Default route
+    component: HomeComponent // HomeComponent will load when the app starts at '/'
   },
   {
     path: 'home',
-    component: HomeComponent  // Home route
+    component: HomeComponent // Home route to explicitly navigate to the HomeComponent
   },
   {
     path: 'players',
-    component: PlayersComponent // Route for players component
+    component:PlayersComponent
+  },
+  {
+    path: '', redirectTo: '/players', pathMatch:'full'
   },
   {
     path: 'signin',
-    component: SigninComponent  // Route for signin component
+    component: SigninComponent
   },
   {
     path: 'create-character',
-    component: CreateCharacterComponent // Route for create character component
+    component: CreateCharacterComponent,
+    canActivate:[authGuard]
   },
   {
     path: 'create-guild',
-    component: CreateGuildComponent // Route for create guild component
+    component: CreateGuildComponent
   },
   {
     path: 'character-faction',
-    component: CharacterFactionComponent // Route for character faction component
+    component: CharacterFactionComponent
   },
-  {
-    path: '**', // Wildcard route for a 404 page
-    redirectTo: 'home'
-  }
 ];
